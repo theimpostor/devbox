@@ -16,6 +16,7 @@ dnf install -y  \
     gdb \
     golang \
     lsof \
+    lib{a,l,t,ub}san \
     neovim \
     net-tools \
     nodejs \
