@@ -19,6 +19,7 @@ dnf install -y  \
     neovim \
     net-tools \
     nodejs \
+    openssh-server \
     perf \
     procps \
     python{2,3}-neovim \
