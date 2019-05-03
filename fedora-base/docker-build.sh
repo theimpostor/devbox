@@ -32,6 +32,8 @@ dnf install -y  \
 
 # not working on docker hub
 #    fd-find \
+dnf copr enable keefle/fd
+dnf install fd
 
 pip2 install neovim
 
