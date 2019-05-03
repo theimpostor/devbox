@@ -10,7 +10,6 @@ dnf install -y  \
     bash-completion \
     ccls \
     cmake \
-    fd-find \
     file \
     gcc-c++ \
     gdb \
@@ -31,7 +30,8 @@ dnf install -y  \
     sysstat \
     vim
 
-dnf clean all
+# not working on docker hub
+#    fd-find \
 
 pip2 install neovim
 
@@ -47,4 +47,18 @@ npm install -g \
 # https://github.com/mads-hartmann/bash-language-server/issues/93#issuecomment-476144999
 npm install --unsafe-perm -g bash-language-server
 
+# build ear tool
+TMP=$(mktemp -d)
+cd "$TMP"
+curl -fsSL https://github.com/rizsotto/Bear/archive/2.3.13.tar.gz | tar xzvf -
+mkdir build
+cd build
+cmake ../Bear-2.3.13
+make all
+make install
+cd /
+rm -rf "$TMP"
+
+# clean up
+dnf clean all
 npm cache --force clean
