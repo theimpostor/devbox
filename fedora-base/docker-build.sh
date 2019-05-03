@@ -23,7 +23,7 @@ dnf install -y  \
     openssh-server \
     perf \
     procps \
-    python{2,3}-neovim \
+    python3-neovim \
     ripgrep \
     sudo \
     ShellCheck \
@@ -31,6 +31,8 @@ dnf install -y  \
     vim
 
 dnf clean all
+
+pip2 install neovim
 
 # install node based utilities
 npm install -g \
