@@ -15,6 +15,7 @@ dnf install -y  \
     gcc-c++ \
     gdb \
     golang \
+    jq \
     lsof \
     lib{a,l,t,ub}san \
     neovim \
