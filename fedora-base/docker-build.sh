@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -euf -o pipefail
+set -euxf -o pipefail
 
 dnf update -y
 
@@ -32,8 +32,7 @@ dnf install -y  \
 
 # not working on docker hub
 #    fd-find \
-dnf copr enable keefle/fd
-dnf install fd
+dnf install -y fd-find
 
 pip2 install neovim
 
