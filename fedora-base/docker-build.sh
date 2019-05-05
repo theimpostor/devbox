@@ -5,6 +5,7 @@ set -euxf -o pipefail
 dnf update -y
 
 dnf groupinstall -y 'Development Tools'
+dnf groupinstall -y 'System Tools'
 
 dnf install -y  \
     bash-completion \
@@ -24,7 +25,6 @@ dnf install -y  \
     perf \
     procps \
     python3-neovim \
-    ripgrep \
     sudo \
     ShellCheck \
     sysstat \
@@ -63,6 +63,14 @@ cd "$TMP"
 curl -fsSL https://github.com/sharkdp/fd/releases/download/v7.3.0/fd-v7.3.0-x86_64-unknown-linux-gnu.tar.gz | tar xzvf - --strip-components=1
 mv fd /usr/local/bin/.
 mv autocomplete/fd.bash-completion "$(pkg-config --variable=completionsdir bash-completion)"/fd
+cd /
+rm -rf "$TMP"
+
+TMP=$(mktemp -d)
+cd "$TMP"
+curl -fsSL https://github.com/BurntSushi/ripgrep/releases/download/11.0.1/ripgrep-11.0.1-x86_64-unknown-linux-musl.tar.gz | tar xzvf - --strip-components=1
+mv rg /usr/local/bin/.
+mv complete/rg.bash "$(pkg-config --variable=completionsdir bash-completion)"/rg
 cd /
 rm -rf "$TMP"
 
