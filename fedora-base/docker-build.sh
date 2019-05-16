@@ -8,6 +8,8 @@ dnf groupinstall -y 'Development Tools'
 dnf groupinstall -y 'System Tools'
 
 dnf install -y  \
+    autoconf \
+    automake \
     bash-completion \
     ccls \
     cmake \
@@ -71,6 +73,17 @@ cd "$TMP"
 curl -fsSL https://github.com/BurntSushi/ripgrep/releases/download/11.0.1/ripgrep-11.0.1-x86_64-unknown-linux-musl.tar.gz | tar xzvf - --strip-components=1
 mv rg /usr/local/bin/.
 mv complete/rg.bash "$(pkg-config --variable=completionsdir bash-completion)"/rg
+cd /
+rm -rf "$TMP"
+
+# universal ctags
+TMP=$(mktemp -d)
+cd "$TMP"
+git clone http://github.com/universal-ctags/ctags.git .
+./autogen.sh
+./configure
+make
+make install
 cd /
 rm -rf "$TMP"
 
