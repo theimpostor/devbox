@@ -11,6 +11,7 @@ dnf install -y  \
     autoconf \
     automake \
     bash-completion \
+    bat \
     ccls \
     cmake \
     file \
@@ -27,6 +28,7 @@ dnf install -y  \
     perf \
     procps \
     python3-neovim \
+    rsync \
     sudo \
     ShellCheck \
     sysstat \
