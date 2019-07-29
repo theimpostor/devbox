@@ -32,7 +32,9 @@ dnf install -y  \
     sudo \
     ShellCheck \
     sysstat \
-    vim
+    vim \
+    xauth \
+    xclip
 
 pip2 install neovim
 
