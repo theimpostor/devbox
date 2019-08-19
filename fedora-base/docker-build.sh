@@ -30,6 +30,7 @@ dnf install -y  \
     python3-neovim \
     rsync \
     sudo \
+    time \
     ShellCheck \
     sysstat \
     vim \
