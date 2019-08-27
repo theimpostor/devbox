@@ -92,6 +92,24 @@ make install
 cd /
 rm -rf "$TMP"
 
+# coz dependency: libelfin
+TMP=$(mktemp -d)
+cd "$TMP"
+curl -fsSL https://github.com/aclements/libelfin/archive/v0.3.tar.gz | tar xzvf - --strip-components=1
+make
+make install
+cd /
+rm -rf "$TMP"
+
+# coz causal profiler:
+TMP=$(mktemp -d)
+cd "$TMP"
+git clone https://github.com/plasma-umass/coz.git .
+make
+make install
+cd /
+rm -rf "$TMP"
+
 # clean up
 dnf clean all
 npm cache --force clean
