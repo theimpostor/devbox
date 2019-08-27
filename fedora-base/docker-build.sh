@@ -30,7 +30,7 @@ dnf install -y  \
     python3-devel \
     python3-neovim \
     python3-tkinter \
-    redhad-rpm-config \
+    redhat-rpm-config \
     rsync \
     sudo \
     time \
