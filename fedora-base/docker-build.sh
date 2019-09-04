@@ -18,6 +18,7 @@ dnf install -y  \
     gcc-c++ \
     gdb \
     golang \
+    java-1.8.0-openjdk-devel \
     jq \
     lsof \
     lib{a,l,t,ub}san \
