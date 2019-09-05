@@ -7,11 +7,14 @@ dnf update -y
 dnf groupinstall -y 'Development Tools'
 dnf groupinstall -y 'System Tools'
 
+dnf copr -y enable @dotnet-sig/dotnet
+
 dnf install -y  \
     autoconf \
     automake \
     bash-completion \
     bat \
+    dotnet-sdk-2.2 \
     ccls \
     cmake \
     file \
