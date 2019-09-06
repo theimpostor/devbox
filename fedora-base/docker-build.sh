@@ -7,14 +7,11 @@ dnf update -y
 dnf groupinstall -y 'Development Tools'
 dnf groupinstall -y 'System Tools'
 
-dnf copr -y enable @dotnet-sig/dotnet
-
 dnf install -y  \
     autoconf \
     automake \
     bash-completion \
     bat \
-    dotnet-sdk-2.2 \
     ccls \
     cmake \
     file \
@@ -43,6 +40,10 @@ dnf install -y  \
     vim \
     xauth \
     xclip
+
+dnf install 'dnf-command(copr)'
+dnf copr -y enable @dotnet-sig/dotnet
+dnf install -y dotnet-sdk-2.2
 
 pip2 install neovim
 pip3 install psrecord matplotlib
