@@ -37,6 +37,7 @@ dnf install -y  \
     time \
     ShellCheck \
     sysstat \
+    tcpdump \
     vim \
     xauth \
     xclip
@@ -100,6 +101,10 @@ make
 make install
 cd /
 rm -rf "$TMP"
+
+# ctop
+curl -fsSL -o /usr/local/bin/ctop https://github.com/bcicen/ctop/releases/download/v0.7.2/ctop-0.7.2-linux-amd64
+chmod +x /usr/local/bin/ctop
 
 # # coz dependency: libelfin
 # TMP=$(mktemp -d)
