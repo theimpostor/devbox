@@ -14,6 +14,7 @@ dnf install -y  \
     bat \
     ccls \
     cmake \
+    fd-find \
     file \
     gcc-c++ \
     gdb \
@@ -27,14 +28,13 @@ dnf install -y  \
     nodejs \
     openssh-server \
     perf \
-    procps \
     python3-devel \
     python3-neovim \
     python3-tkinter \
     redhat-rpm-config \
+    ripgrep \
     rsync \
     strace \
-    sudo \
     time \
     ShellCheck \
     sysstat \
@@ -74,23 +74,23 @@ make install
 cd /
 rm -rf "$TMP"
 
-# not working on docker hub
-#    fd-find \
-TMP=$(mktemp -d)
-cd "$TMP"
-curl -fsSL https://github.com/sharkdp/fd/releases/download/v7.4.0/fd-v7.4.0-x86_64-unknown-linux-gnu.tar.gz | tar xzvf - --strip-components=1
-mv fd /usr/local/bin/.
-mv autocomplete/fd.bash-completion "$(pkg-config --variable=completionsdir bash-completion)"/fd
-cd /
-rm -rf "$TMP"
+# # not working on docker hub
+# #    fd-find \
+# TMP=$(mktemp -d)
+# cd "$TMP"
+# curl -fsSL https://github.com/sharkdp/fd/releases/download/v7.4.0/fd-v7.4.0-x86_64-unknown-linux-gnu.tar.gz | tar xzvf - --strip-components=1
+# mv fd /usr/local/bin/.
+# mv autocomplete/fd.bash-completion "$(pkg-config --variable=completionsdir bash-completion)"/fd
+# cd /
+# rm -rf "$TMP"
 
-TMP=$(mktemp -d)
-cd "$TMP"
-curl -fsSL https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep-11.0.2-x86_64-unknown-linux-musl.tar.gz | tar xzvf - --strip-components=1
-mv rg /usr/local/bin/.
-mv complete/rg.bash "$(pkg-config --variable=completionsdir bash-completion)"/rg
-cd /
-rm -rf "$TMP"
+# TMP=$(mktemp -d)
+# cd "$TMP"
+# curl -fsSL https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep-11.0.2-x86_64-unknown-linux-musl.tar.gz | tar xzvf - --strip-components=1
+# mv rg /usr/local/bin/.
+# mv complete/rg.bash "$(pkg-config --variable=completionsdir bash-completion)"/rg
+# cd /
+# rm -rf "$TMP"
 
 # universal ctags
 TMP=$(mktemp -d)
