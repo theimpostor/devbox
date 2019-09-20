@@ -33,6 +33,7 @@ dnf install -y  \
     python3-tkinter \
     redhat-rpm-config \
     rsync \
+    strace \
     sudo \
     time \
     ShellCheck \
