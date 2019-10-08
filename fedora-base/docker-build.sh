@@ -66,10 +66,10 @@ npm install --unsafe-perm -g bash-language-server
 # build ear tool
 TMP=$(mktemp -d)
 cd "$TMP"
-curl -fsSL https://github.com/rizsotto/Bear/archive/2.3.13.tar.gz | tar xzvf -
+curl -fsSL https://github.com/rizsotto/Bear/archive/2.4.2.tar.gz | tar xzvf -
 mkdir build
 cd build
-cmake ../Bear-2.3.13
+cmake ../Bear-2.4.2
 make all
 make install
 cd /
