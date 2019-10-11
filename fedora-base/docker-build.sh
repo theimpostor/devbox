@@ -24,6 +24,7 @@ dnf install -y  \
     jq \
     lsof \
     lib{a,l,t,ub}san \
+    mutrace \
     neovim \
     net-tools \
     nodejs \
