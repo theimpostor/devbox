@@ -5,31 +5,37 @@ set -euxf -o pipefail
 dnf update -y
 
 dnf groupinstall -y 'Development Tools'
-dnf groupinstall -y 'System Tools'
 
 dnf install -y  \
     autoconf \
     automake \
     bash-completion \
     bat \
+    bzip2 \
     ccls \
     cmake \
+    cpio \
     docker-compose \
     fd-find \
     file \
+    findutils \
     gcc-c++ \
     gdb \
     golang \
+    hyperfine \
+    iputils \
     java-1.8.0-openjdk-devel \
     jq \
     lsof \
     lib{a,l,t,ub}san \
+    lz4 \
     mutrace \
     neovim \
     net-tools \
     nodejs \
     openssh-server \
     perf \
+    procps-ng \
     python3-devel \
     python3-neovim \
     python3-tkinter \
@@ -38,12 +44,16 @@ dnf install -y  \
     rsync \
     strace \
     time \
+    screen \
     ShellCheck \
     sysstat \
     tcpdump \
     vim \
+    wget \
+    which \
     xauth \
-    xclip
+    xclip \
+    xz
 
 dnf install 'dnf-command(copr)'
 dnf copr -y enable @dotnet-sig/dotnet
