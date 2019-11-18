@@ -62,14 +62,14 @@ dnf install -y dotnet-sdk-2.2
 pip2 install neovim
 pip3 install psrecord matplotlib
 
-# install node based utilities
+# # install node based utilities
+#     flow-bin \
+#     javascript-typescript-langserver \
+#     standard \
+#     vscode-html-languageserver-bin
 npm install -g \
     dockerfile-language-server-nodejs \
-    flow-bin \
-    javascript-typescript-langserver \
-    neovim \
-    standard \
-    vscode-html-languageserver-bin
+    neovim
 
 # https://github.com/mads-hartmann/bash-language-server/issues/93#issuecomment-476144999
 npm install --unsafe-perm -g bash-language-server
@@ -100,6 +100,9 @@ rm -rf "$TMP"
 # ctop
 curl -fsSL -o /usr/local/bin/ctop https://github.com/bcicen/ctop/releases/download/v0.7.2/ctop-0.7.2-linux-amd64
 chmod +x /usr/local/bin/ctop
+
+# docker bash completion
+curl -fsSL https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/bash/docker > "$(pkg-config --variable=compatdir bash-completion)"/docker
 
 # # coz dependency: libelfin
 # TMP=$(mktemp -d)
