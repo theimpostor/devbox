@@ -7,6 +7,7 @@ dnf update -y
 dnf groupinstall -y 'Development Tools'
 
 dnf install -y  \
+    ShellCheck \
     autoconf \
     automake \
     bash-completion \
@@ -26,8 +27,9 @@ dnf install -y  \
     iputils \
     java-1.8.0-openjdk-devel \
     jq \
-    lsof \
     lib{a,l,t,ub}san \
+    llvm-devel \
+    lsof \
     lz4 \
     mutrace \
     neovim \
@@ -42,17 +44,14 @@ dnf install -y  \
     redhat-rpm-config \
     ripgrep \
     rsync \
-    strace \
-    time \
     screen \
-    ShellCheck \
+    strace \
     sysstat \
     tcpdump \
+    time \
     vim \
     wget \
     which \
-    xauth \
-    xclip \
     xz
 
 dnf install 'dnf-command(copr)'
