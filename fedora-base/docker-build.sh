@@ -97,7 +97,7 @@ cd /
 rm -rf "$TMP"
 
 # ctop
-curl -fsSL -o /usr/local/bin/ctop https://github.com/bcicen/ctop/releases/download/v0.7.2/ctop-0.7.2-linux-amd64
+curl -fsSL -o /usr/local/bin/ctop https://github.com/bcicen/ctop/releases/download/v0.7.3/ctop-0.7.3-linux-amd64
 chmod +x /usr/local/bin/ctop
 
 # docker bash completion
