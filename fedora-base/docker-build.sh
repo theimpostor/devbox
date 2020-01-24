@@ -68,7 +68,8 @@ pip3 install psrecord matplotlib
 #     vscode-html-languageserver-bin
 npm install -g \
     dockerfile-language-server-nodejs \
-    neovim
+    neovim \
+    tldr
 
 # https://github.com/mads-hartmann/bash-language-server/issues/93#issuecomment-476144999
 npm install --unsafe-perm -g bash-language-server
