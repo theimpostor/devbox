@@ -104,7 +104,6 @@ chmod +x /usr/local/bin/ctop
 # docker bash completion
 curl -fsSL https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/bash/docker > "$(pkg-config --variable=compatdir bash-completion)"/docker
 
-
 # # coz dependency: libelfin
 # TMP=$(mktemp -d)
 # cd "$TMP"
