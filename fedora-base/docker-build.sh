@@ -16,6 +16,7 @@ dnf install -y  \
     ccls \
     cmake \
     cpio \
+    diffutils \
     docker-compose \
     fd-find \
     file \
