@@ -40,6 +40,7 @@ dnf install -y  \
     procps-ng \
     python3-devel \
     python3-neovim \
+    python3-pip \
     python3-tkinter \
     redhat-rpm-config \
     ripgrep \
