@@ -126,3 +126,4 @@ curl -fsSL https://raw.githubusercontent.com/docker/docker-ce/master/components/
 # clean up
 dnf clean all
 npm cache --force clean
+rm -rf /root/.cache/pip
