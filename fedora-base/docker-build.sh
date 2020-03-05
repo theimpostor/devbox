@@ -79,10 +79,10 @@ npm install --unsafe-perm -g bash-language-server
 # build ear tool
 TMP=$(mktemp -d)
 cd "$TMP"
-curl -fsSL https://github.com/rizsotto/Bear/archive/2.4.2.tar.gz | tar xzvf -
+curl -fsSL https://github.com/rizsotto/Bear/archive/2.4.3.tar.gz | tar xzvf -
 mkdir build
 cd build
-cmake ../Bear-2.4.2
+cmake ../Bear-2.4.3
 make all
 make install
 cd /
@@ -128,3 +128,4 @@ curl -fsSL https://raw.githubusercontent.com/docker/docker-ce/master/components/
 dnf clean all
 npm cache --force clean
 rm -rf /root/.cache/pip
+find /var/tmp /tmp -mindepth 1 -delete
