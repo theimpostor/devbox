@@ -2,6 +2,9 @@
 
 set -euxf -o pipefail
 
+# enable man pages - https://unix.stackexchange.com/a/525250
+sed -i -e '/tsflags=nodocs/s/^/#/' /etc/dnf/dnf.conf
+
 dnf update -y
 
 dnf groupinstall -y 'Development Tools'
@@ -32,6 +35,8 @@ dnf install -y  \
     llvm-devel \
     lsof \
     lz4 \
+    man-db \
+    man-pages \
     mutrace \
     neovim \
     net-tools \
