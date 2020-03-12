@@ -15,6 +15,7 @@ dnf install -y  \
     automake \
     bash-completion \
     bat \
+    bear \
     bzip2 \
     ccls \
     cmake \
@@ -80,18 +81,6 @@ npm install -g \
 
 # https://github.com/mads-hartmann/bash-language-server/issues/93#issuecomment-476144999
 npm install --unsafe-perm -g bash-language-server
-
-# build ear tool
-TMP=$(mktemp -d)
-cd "$TMP"
-curl -fsSL https://github.com/rizsotto/Bear/archive/2.4.3.tar.gz | tar xzvf -
-mkdir build
-cd build
-cmake ../Bear-2.4.3
-make all
-make install
-cd /
-rm -rf "$TMP"
 
 # universal ctags
 TMP=$(mktemp -d)
