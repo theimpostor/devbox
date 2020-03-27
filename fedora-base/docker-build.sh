@@ -69,15 +69,9 @@ dnf install -y dotnet-sdk-2.2
 pip2 install neovim
 pip3 install psrecord matplotlib
 
-# # install node based utilities
-#     flow-bin \
-#     javascript-typescript-langserver \
-#     standard \
-#     vscode-html-languageserver-bin
 npm install -g \
     dockerfile-language-server-nodejs \
-    neovim \
-    tldr
+    neovim
 
 # https://github.com/mads-hartmann/bash-language-server/issues/93#issuecomment-476144999
 npm install --unsafe-perm -g bash-language-server
