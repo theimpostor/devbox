@@ -57,6 +57,7 @@ dnf install -y  \
     sysstat \
     tcpdump \
     time \
+    valgrind \
     vim \
     wget \
     which \
