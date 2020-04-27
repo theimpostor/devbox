@@ -11,5 +11,6 @@ RUN /docker-build.sh
 COPY --from=dua-cli /usr/local/cargo/bin/dua /usr/bin/dua
 COPY --from=dua-cli /usr/local/cargo/bin/hexyl /usr/bin/hexyl
 COPY --from=dua-cli /usr/local/cargo/bin/pastel /usr/bin/pastel
+COPY --from=dua-cli /usr/local/cargo/bin/hyperfine /usr/bin/hyperfine
 
 VOLUME /tmp
