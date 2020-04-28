@@ -76,17 +76,16 @@ npm install -g \
 # https://github.com/mads-hartmann/bash-language-server/issues/93#issuecomment-476144999
 npm install --unsafe-perm -g bash-language-server
 
-# Pending resolution to https://github.com/universal-ctags/ctags/issues/2526
-# # universal ctags
-# TMP=$(mktemp -d)
-# cd "$TMP"
-# git clone http://github.com/universal-ctags/ctags.git .
-# ./autogen.sh
-# ./configure
-# make
-# make install
-# cd /
-# rm -rf "$TMP"
+# universal ctags
+TMP=$(mktemp -d)
+cd "$TMP"
+git clone http://github.com/universal-ctags/ctags.git .
+./autogen.sh
+./configure
+make
+make install
+cd /
+rm -rf "$TMP"
 
 # ctop
 curl -fsSL -o /usr/local/bin/ctop https://github.com/bcicen/ctop/releases/download/v0.7.3/ctop-0.7.3-linux-amd64
