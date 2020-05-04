@@ -28,6 +28,7 @@ dnf install -y  \
     gcc-c++ \
     gdb \
     golang \
+    hyperfine \
     iputils \
     java-1.8.0-openjdk-devel \
     jq \
