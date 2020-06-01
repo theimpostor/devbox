@@ -44,6 +44,7 @@ dnf install -y  \
     nodejs \
     openssh-server \
     perf \
+    perl-open \
     procps-ng \
     python3-devel \
     python3-neovim \
