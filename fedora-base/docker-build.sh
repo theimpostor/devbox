@@ -22,6 +22,7 @@ dnf install -y  \
     cpio \
     diffutils \
     docker-compose \
+    dua-cli \
     fd-find \
     file \
     findutils \
@@ -89,12 +90,28 @@ make install
 cd /
 rm -rf "$TMP"
 
-# ctop
-curl -fsSL -o /usr/local/bin/ctop https://github.com/bcicen/ctop/releases/download/v0.7.3/ctop-0.7.3-linux-amd64
-chmod +x /usr/local/bin/ctop
-
 # docker bash completion
 curl -fsSL https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/bash/docker > "$(pkg-config --variable=compatdir bash-completion)"/docker
+
+# hexyl
+TMP=$(mktemp -d)
+cd "$TMP"
+curl -fsSL "$(curl -fsSL "https://api.github.com/repos/sharkdp/hexyl/releases/latest" | jq -r '.assets[].browser_download_url' | grep "x86_64-unknown-linux-gnu.tar.gz$")" | tar xzvf - --strip-components 1
+cp -a hexyl /usr/bin/hexyl
+cd /
+rm -rf "$TMP"
+
+# pastel
+TMP=$(mktemp -d)
+cd "$TMP"
+curl -fsSL "$(curl -fsSL "https://api.github.com/repos/sharkdp/pastel/releases/latest" | jq -r '.assets[].browser_download_url' | grep "x86_64-unknown-linux-gnu.tar.gz$")" | tar xzvf - --strip-components 1
+cp -a pastel /usr/bin/pastel
+cd /
+rm -rf "$TMP"
+
+# ctop
+curl -fsSLo /usr/bin/ctop "$(curl -fsSL "https://api.github.com/repos/bcicen/ctop/releases/latest" | jq -r '.assets[].browser_download_url' | grep "linux-amd64$")"
+chmod +x /usr/bin/ctop
 
 # # coz dependency: libelfin
 # TMP=$(mktemp -d)
