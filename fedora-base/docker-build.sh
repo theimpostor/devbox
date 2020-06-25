@@ -80,56 +80,32 @@ npm install -g \
 npm install --unsafe-perm -g bash-language-server
 
 # universal ctags
-TMP=$(mktemp -d)
-cd "$TMP"
+pushd "$(mktemp -d)"
 git clone http://github.com/universal-ctags/ctags.git .
 ./autogen.sh
 ./configure
 make
 make install
-cd /
-rm -rf "$TMP"
+popd
 
 # docker bash completion
 curl -fsSL https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/bash/docker > "$(pkg-config --variable=compatdir bash-completion)"/docker
 
 # hexyl
-TMP=$(mktemp -d)
-cd "$TMP"
+pushd "$(mktemp -d)"
 curl -fsSL "$(curl -fsSL "https://api.github.com/repos/sharkdp/hexyl/releases/latest" | jq -r '.assets[].browser_download_url' | grep "x86_64-unknown-linux-gnu.tar.gz$")" | tar xzvf - --strip-components 1
 cp -a hexyl /usr/bin/hexyl
-cd /
-rm -rf "$TMP"
+popd
 
 # pastel
-TMP=$(mktemp -d)
-cd "$TMP"
+pushd "$(mktemp -d)"
 curl -fsSL "$(curl -fsSL "https://api.github.com/repos/sharkdp/pastel/releases/latest" | jq -r '.assets[].browser_download_url' | grep "x86_64-unknown-linux-gnu.tar.gz$")" | tar xzvf - --strip-components 1
 cp -a pastel /usr/bin/pastel
-cd /
-rm -rf "$TMP"
+popd
 
 # ctop
 curl -fsSLo /usr/bin/ctop "$(curl -fsSL "https://api.github.com/repos/bcicen/ctop/releases/latest" | jq -r '.assets[].browser_download_url' | grep "linux-amd64$")"
 chmod +x /usr/bin/ctop
-
-# # coz dependency: libelfin
-# TMP=$(mktemp -d)
-# cd "$TMP"
-# curl -fsSL https://github.com/aclements/libelfin/archive/v0.3.tar.gz | tar xzvf - --strip-components=1
-# make
-# make install
-# cd /
-# rm -rf "$TMP"
-
-# # coz causal profiler:
-# TMP=$(mktemp -d)
-# cd "$TMP"
-# git clone https://github.com/plasma-umass/coz.git .
-# make
-# make install
-# cd /
-# rm -rf "$TMP"
 
 # clean up
 dnf clean all
