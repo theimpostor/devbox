@@ -30,6 +30,8 @@ dnf install -y  \
     gdb \
     golang \
     hyperfine \
+    iproute \
+    iptables \
     iputils \
     java-1.8.0-openjdk-devel \
     jq \
