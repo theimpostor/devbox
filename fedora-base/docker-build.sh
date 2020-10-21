@@ -18,6 +18,7 @@ dnf install -y  \
     bear \
     bzip2 \
     ccls \
+    clang \
     cmake \
     cpio \
     diffutils \
