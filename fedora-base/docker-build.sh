@@ -34,7 +34,7 @@ dnf install -y  \
     iproute \
     iptables \
     iputils \
-    java-1.8.0-openjdk-devel \
+    java-11-openjdk-devel \
     jemalloc-devel \
     jq \
     lib{a,l,t,ub}san \
