@@ -96,6 +96,13 @@ popd
 # docker bash completion
 curl -fsSL https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/bash/docker > "$(pkg-config --variable=compatdir bash-completion)"/docker
 
+
+# glow
+pushd "$(mktemp -d)"
+curl -fsSLO "$(curl -fsSL "https://api.github.com/repos/charmbracelet/glow/releases/latest" | jq -r '.assets[].browser_download_url' | grep "linux_amd64.rpm")"
+rpm -U glow*linux_amd64.rpm
+popd
+
 # hexyl
 pushd "$(mktemp -d)"
 curl -fsSL "$(curl -fsSL "https://api.github.com/repos/sharkdp/hexyl/releases/latest" | jq -r '.assets[].browser_download_url' | grep "x86_64-unknown-linux-gnu.tar.gz$")" | tar xzvf - --strip-components 1
