@@ -27,6 +27,7 @@ dnf install -y  \
     fd-find \
     file \
     findutils \
+    fio \
     gcc-c++ \
     gdb \
     golang \
