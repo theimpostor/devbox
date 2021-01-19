@@ -7,6 +7,12 @@ sed -i -e '/tsflags=nodocs/s/^/#/' /etc/dnf/dnf.conf
 
 dnf update -y
 
+dnf install -y glibc-locale-source
+
+localedef --no-archive -i en_US -f UTF-8 en_US.UTF-8
+
+export LANG=en_US.UTF-8
+
 dnf groupinstall -y 'Development Tools'
 
 dnf install -y  \
