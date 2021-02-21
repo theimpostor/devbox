@@ -56,6 +56,7 @@ dnf install -y  \
     nodejs \
     openssh-server \
     perf \
+    perl-JSON-PP \
     perl-open \
     procps-ng \
     python3-devel \
