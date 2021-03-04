@@ -37,6 +37,7 @@ dnf install -y  \
     gcc-c++ \
     gdb \
     golang \
+    golang-x-tools-gopls \
     hyperfine \
     iproute \
     iptables \
