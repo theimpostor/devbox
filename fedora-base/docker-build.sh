@@ -82,8 +82,8 @@ dnf install -y  \
     vim \
     wget \
     which \
-    xz
-    zlib-devel \
+    xz \
+    zlib-devel
 
 ln -s /usr/share/clang/clang-format-diff.py /usr/bin/.
 
