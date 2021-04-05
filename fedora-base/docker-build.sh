@@ -56,6 +56,7 @@ dnf install -y  \
     net-tools \
     nodejs \
     openssh-server \
+    parallel \
     perf \
     perl-JSON-PP \
     perl-open \
@@ -77,6 +78,9 @@ dnf install -y  \
     wget \
     which \
     xz
+
+# building rocksdb:
+dnf install {gflags,snappy,zlib,bzip2,lz4,libzstd}-devel
 
 dnf install 'dnf-command(copr)'
 dnf copr -y enable @dotnet-sig/dotnet
