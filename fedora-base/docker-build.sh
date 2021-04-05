@@ -23,6 +23,7 @@ dnf install -y  \
     bat \
     bear \
     bzip2 \
+    bzip2-devel \
     ccls \
     clang \
     cmake \
@@ -36,6 +37,7 @@ dnf install -y  \
     fio \
     gcc-c++ \
     gdb \
+    gflags-devel \
     golang \
     golang-x-tools-gopls \
     hyperfine \
@@ -45,10 +47,12 @@ dnf install -y  \
     java-11-openjdk-devel \
     jemalloc-devel \
     jq \
+    libzstd-devel \
     lib{a,l,t,ub}san \
     llvm-devel \
     lsof \
     lz4 \
+    lz4-devel \
     man-db \
     man-pages \
     mutrace \
@@ -69,6 +73,7 @@ dnf install -y  \
     ripgrep \
     rsync \
     screen \
+    snappy-devel \
     strace \
     sysstat \
     tcpdump \
@@ -78,9 +83,9 @@ dnf install -y  \
     wget \
     which \
     xz
+    zlib-devel \
 
-# building rocksdb:
-dnf install {gflags,snappy,zlib,bzip2,lz4,libzstd}-devel
+ln -s /usr/share/clang/clang-format-diff.py /usr/bin/.
 
 dnf install 'dnf-command(copr)'
 dnf copr -y enable @dotnet-sig/dotnet
