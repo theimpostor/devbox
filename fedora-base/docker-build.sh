@@ -82,6 +82,9 @@ dnf install 'dnf-command(copr)'
 dnf copr -y enable @dotnet-sig/dotnet
 dnf install -y dotnet-sdk-2.2
 
+dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
+dnf install -y gh
+
 # TODO: broken w/fedora 33
 # # pip2 install neovim
 # pip3 install psrecord matplotlib
