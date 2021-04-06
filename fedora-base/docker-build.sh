@@ -99,6 +99,8 @@ dnf install -y gh
 # # pip2 install neovim
 # pip3 install psrecord matplotlib
 
+pip3 install grip
+
 npm install -g \
     dockerfile-language-server-nodejs \
     neovim
