@@ -31,6 +31,7 @@ dnf install -y  \
     diffutils \
     docker-compose \
     dua-cli \
+    exa \
     fd-find \
     file \
     findutils \
