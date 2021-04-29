@@ -56,7 +56,6 @@ dnf install -y  \
     lz4-devel \
     man-db \
     man-pages \
-    mutrace \
     neovim \
     net-tools \
     nodejs \
@@ -85,6 +84,9 @@ dnf install -y  \
     which \
     xz \
     zlib-devel
+
+# TODO: not availible in fedora 34
+# mutrace \
 
 ln -s /usr/share/clang/clang-format-diff.py /usr/bin/.
 
