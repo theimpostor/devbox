@@ -1,4 +1,4 @@
-FROM fedora:34
+FROM fedora:33
 
 COPY docker-build.sh /.
 
