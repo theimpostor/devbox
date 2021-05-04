@@ -88,6 +88,11 @@ dnf install -y  \
 
 ln -s /usr/share/clang/clang-format-diff.py /usr/bin/.
 
+# fix up python symlink if not provided
+if ! command -v python >/dev/null 2>&1; then
+    ln -s "$(command -v python3)" /usr/bin/python
+fi
+
 dnf install 'dnf-command(copr)'
 dnf copr -y enable @dotnet-sig/dotnet
 dnf install -y dotnet-sdk-2.2
