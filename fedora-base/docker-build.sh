@@ -22,7 +22,6 @@ dnf install -y  \
     bash-completion \
     bat \
     bear \
-    bzip2 \
     bzip2-devel \
     ccls \
     clang \
@@ -50,9 +49,9 @@ dnf install -y  \
     jq \
     libzstd-devel \
     lib{a,l,t,ub}san \
+    lldb \
     llvm-devel \
     lsof \
-    lz4 \
     lz4-devel \
     man-db \
     man-pages \
@@ -66,6 +65,7 @@ dnf install -y  \
     perl-JSON-PP \
     perl-open \
     procps-ng \
+    python-unversioned-command \
     python3-devel \
     python3-neovim \
     python3-pip \
@@ -87,11 +87,6 @@ dnf install -y  \
     zlib-devel
 
 ln -s /usr/share/clang/clang-format-diff.py /usr/bin/.
-
-# fix up python symlink if not provided
-if ! command -v python >/dev/null 2>&1; then
-    ln -s "$(command -v python3)" /usr/bin/python
-fi
 
 dnf install 'dnf-command(copr)'
 dnf copr -y enable @dotnet-sig/dotnet
