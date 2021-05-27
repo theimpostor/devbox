@@ -38,6 +38,7 @@ dnf install -y  \
     gcc-c++ \
     gdb \
     gflags-devel \
+    git-delta \
     golang \
     golang-x-tools-gopls \
     hyperfine \
@@ -69,11 +70,9 @@ dnf install -y  \
     python3-devel \
     python3-neovim \
     python3-pip \
-    python3-tkinter \
     redhat-rpm-config \
     ripgrep \
     rsync \
-    screen \
     snappy-devel \
     strace \
     sysstat \
