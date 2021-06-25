@@ -142,7 +142,10 @@ curl -fsSLo /usr/bin/ctop "$(curl -fsSL "https://api.github.com/repos/bcicen/cto
 chmod +x /usr/bin/ctop
 
 # starship (package manager version too old)
-sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+pushd "$(mktemp -d)"
+curl -fsSLO https://starship.rs/install.sh
+sh install.sh --yes
+popd
 
 # clean up
 dnf clean all
