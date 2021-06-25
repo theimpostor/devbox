@@ -141,6 +141,9 @@ popd
 curl -fsSLo /usr/bin/ctop "$(curl -fsSL "https://api.github.com/repos/bcicen/ctop/releases/latest" | jq -r '.assets[].browser_download_url' | grep "linux-amd64$")"
 chmod +x /usr/bin/ctop
 
+# starship (package manager version too old)
+sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+
 # clean up
 dnf clean all
 npm cache --force clean
