@@ -84,6 +84,7 @@ dnf install -y  \
     xz \
     zlib-devel
 
+    # no longer supported on fedora 34
     # mutrace \
 
 ln -s /usr/share/clang/clang-format-diff.py /usr/bin/.
