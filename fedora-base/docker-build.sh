@@ -109,6 +109,7 @@ npm install -g \
 # https://github.com/mads-hartmann/bash-language-server/issues/93#issuecomment-476144999
 npm install --unsafe-perm -g bash-language-server
 
+# TODO: fails build on docker hub only?
 # # universal ctags
 # pushd "$(mktemp -d)"
 # git clone http://github.com/universal-ctags/ctags.git .
