@@ -109,15 +109,14 @@ npm install -g \
 # https://github.com/mads-hartmann/bash-language-server/issues/93#issuecomment-476144999
 npm install --unsafe-perm -g bash-language-server
 
-# TODO: fails build on docker hub only?
-# # universal ctags
-# pushd "$(mktemp -d)"
-# git clone http://github.com/universal-ctags/ctags.git .
-# ./autogen.sh
-# ./configure
-# make
-# make install
-# popd
+# universal ctags
+pushd "$(mktemp -d)"
+git clone http://github.com/universal-ctags/ctags.git .
+./autogen.sh
+./configure
+make
+make install
+popd
 
 # docker bash completion
 curl -fsSL https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/bash/docker > "$(pkg-config --variable=compatdir bash-completion)"/docker
