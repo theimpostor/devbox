@@ -23,7 +23,6 @@ dnf install -y  \
     bat \
     bear \
     bzip2-devel \
-    ccls \
     clang \
     cmake \
     cpio \
@@ -84,30 +83,21 @@ dnf install -y  \
     xz \
     zlib-devel
 
-    # no longer supported on fedora 34
-    # mutrace \
-
 ln -s /usr/share/clang/clang-format-diff.py /usr/bin/.
 
-dnf install 'dnf-command(copr)'
-dnf copr -y enable @dotnet-sig/dotnet
-dnf install -y dotnet-sdk-2.2
+mkdir /dotnet
+curl -fsSL https://download.visualstudio.microsoft.com/download/pr/5797d98a-8faf-472d-925c-931ac542d3c8/e48942da88f4d9d653a7b5c0790e7724/dotnet-sdk-2.1.818-linux-x64.tar.gz | tar xzvfC - /dotnet
+ln -s /dotnet/dotnet /usr/bin/.
 
 dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
 dnf install -y gh
 
-# TODO: broken w/fedora 33
-# # pip2 install neovim
-# pip3 install psrecord matplotlib
-
 pip3 install grip
 
 npm install -g \
+    bash-language-server \
     dockerfile-language-server-nodejs \
     neovim
-
-# https://github.com/mads-hartmann/bash-language-server/issues/93#issuecomment-476144999
-npm install --unsafe-perm -g bash-language-server
 
 # universal ctags
 pushd "$(mktemp -d)"
@@ -120,28 +110,6 @@ popd
 
 # docker bash completion
 curl -fsSL https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/bash/docker > "$(pkg-config --variable=compatdir bash-completion)"/docker
-
-# glow
-pushd "$(mktemp -d)"
-curl -fsSLO "$(curl -fsSL "https://api.github.com/repos/charmbracelet/glow/releases/latest" | jq -r '.assets[].browser_download_url' | grep "linux_amd64.rpm")"
-rpm -U glow*linux_amd64.rpm
-popd
-
-# hexyl
-pushd "$(mktemp -d)"
-curl -fsSL "$(curl -fsSL "https://api.github.com/repos/sharkdp/hexyl/releases/latest" | jq -r '.assets[].browser_download_url' | grep "x86_64-unknown-linux-gnu.tar.gz$")" | tar xzvf - --strip-components 1
-cp -a hexyl /usr/bin/hexyl
-popd
-
-# pastel
-pushd "$(mktemp -d)"
-curl -fsSL "$(curl -fsSL "https://api.github.com/repos/sharkdp/pastel/releases/latest" | jq -r '.assets[].browser_download_url' | grep "x86_64-unknown-linux-gnu.tar.gz$")" | tar xzvf - --strip-components 1
-cp -a pastel /usr/bin/pastel
-popd
-
-# ctop
-curl -fsSLo /usr/bin/ctop "$(curl -fsSL "https://api.github.com/repos/bcicen/ctop/releases/latest" | jq -r '.assets[].browser_download_url' | grep "linux-amd64$")"
-chmod +x /usr/bin/ctop
 
 # starship (package manager version too old)
 pushd "$(mktemp -d)"
