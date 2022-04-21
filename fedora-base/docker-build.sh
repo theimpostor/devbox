@@ -7,6 +7,12 @@ sed -i -e '/tsflags=nodocs/s/^/#/' /etc/dnf/dnf.conf
 
 dnf update -y
 
+dnf install -y dnf-plugins-core
+
+dnf copr enable -y agriffis/neovim-nightly
+
+dnf update -y
+
 dnf install -y glibc-locale-source
 
 localedef --no-archive -i en_US -f UTF-8 en_US.UTF-8
@@ -122,4 +128,3 @@ dnf clean all
 npm cache --force clean
 rm -rf /root/.cache/pip
 find /var/tmp /tmp -mindepth 1 -delete
-
